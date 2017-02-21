@@ -23,11 +23,11 @@ app.get('/article-one',function(req,res){
 
 
 app.get('/article-two',function(req,res){
-   res.send('Hello Article two');   
+   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
 
 app.get('/article-Three',function(req,res){
-   res.send('Hello Article Three');   
+   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 
