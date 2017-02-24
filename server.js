@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne={
+var articles = {
+ articleOne:{
     title:'Article One',
     heading: 'Article One|Vidhya Santhoshima',
     date:'Feb 23, 2017',
@@ -15,6 +15,24 @@ var articleOne={
              <p>Hello World this is aricle one.Hello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle oneHello World this is aricle one
              </p>`
     
+},
+articleTwo:{
+    title:'Article Two',
+    heading: 'Article Two|Vidhya Santhoshima',
+    date:'Feb 23, 2017',
+    content:` <p> Hello World this is article two.
+             </p>`
+    
+},
+articleThree:{
+     title:'Article Three',
+    heading: 'Article Three|Vidhya Santhoshima',
+    date:'Feb 24, 2017',
+    content:` <p> Hello World this is article Three.
+             </p>`
+    
+}
+
 };
 
 function createHtmlTemplate(data){
@@ -62,19 +80,12 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one',function(req,res){
-   res.send(createHtmlTemplate(articleOne))
+app.get('/:articleName',function(req,res){
+    var articleName = req.params;
+   res.send(createHtmlTemplate(articles[articleName]))
    ;
 });
 
-
-app.get('/article-two',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-Three',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
