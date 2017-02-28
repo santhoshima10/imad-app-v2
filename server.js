@@ -98,7 +98,7 @@ app.get('/:articleName',function(req,res){
 
 var names=[];
 app.get('/submit/:name',function(req,res){
-    var articleName = req.params.name;
+    var name = req.params.name;
     names.push(name);
    res.send(JSON.stringify(names));
    
