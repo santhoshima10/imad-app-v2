@@ -4,6 +4,8 @@ button.onclick=function(){
       alert('Inside the onclick') ;  
     
 var request = xmlHttpRequest();
+request.open('GET','http://santhoshima10.imad.hasura-app.io/counter',true);
+request.send(null);
 
 request.onreadystatechange = function(){
     
@@ -20,7 +22,6 @@ request.onreadystatechange = function(){
    
 };
 
-request.open('GET','http://santhoshima10.imad.hasura-app.io/counter',true);
-request.send(null);
+
 
 };
