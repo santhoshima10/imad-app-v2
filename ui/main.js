@@ -1,6 +1,7 @@
 var button = document.getElementById('counter');
 
 button.onclick=function(){
+      alert('Inside the onclick') ;  
     
 var request = xmlHttpRequest();
 
