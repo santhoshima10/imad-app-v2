@@ -1,9 +1,23 @@
 var button = document.getElementById('counter');
 
 
+
+
 button.onclick=function(){
     
-var count = document.getElementById('count');
-count.innerHTML = 12;
+var request = xmlHttpRequest();
 
-}
+request.onreadystatechange = function(){
+    
+    if(request.readyState === XMLHttpRequest.DONE && request.status === 200){
+        var count = document.getElementById('count');
+        count.innerHTML = request.responseText;
+        
+        
+    }
+};
+
+request.open('GET','http://santhoshima10.imad.hasura-app.io/counter',true);
+request.send(null);
+
+};
