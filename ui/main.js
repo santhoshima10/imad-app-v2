@@ -1,7 +1,7 @@
 var button = document.getElementById('counter');
 
 button.onclick=function(){
-      alert('Inside the onclick') ;  
+    //  alert('Inside the onclick') ;  
     
 var request = XMLHttpRequest();
 request.open('GET','http://santhoshima10.imad.hasura-app.io/counter',true);
