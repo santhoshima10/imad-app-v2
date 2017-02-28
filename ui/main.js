@@ -26,3 +26,18 @@ request.onreadystatechange = function(){
 
 
 };
+
+
+var nameInput = document.getElementById('nameInput');
+var nameInputValue = nameInput.value;
+
+var uList = document.getElementById('NameList');
+
+var names = ["name1","name2","name3"];
+
+for (var i = 0 ;i < names.length;i++){
+    uList.innerHTML += '<li>'+names[i]+'</li>';
+}
+
+
+
